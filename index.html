@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#101114">
+    <meta name="description" content="Emoney, your curious AI companion.">
+    <link rel="manifest" href="manifest.webmanifest">
+    <link rel="icon" href="icon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="styles.css">
+    <title>Emoney — your AI</title>
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" id="sidebar">
+        <a class="brand" href="/" aria-label="Emoney home">
+          <span class="brand-mark">e</span>
+          <span>emoney</span>
+        </a>
+        <button class="new-chat" id="new-chat" type="button"><span>＋</span> New chat</button>
+        <div class="history-heading">RECENT</div>
+        <div class="history-list" id="history-list"></div>
+        <div class="sidebar-bottom">
+          <button class="profile" id="settings-button" type="button">
+            <span class="avatar">e</span>
+            <span class="profile-copy"><strong>Emoney</strong><small>Your AI companion</small></span>
+            <span class="profile-menu">···</span>
+          </button>
+        </div>
+      </aside>
+
+      <main class="main">
+        <header class="topbar">
+          <button class="icon-button mobile-menu" id="menu-button" type="button" aria-label="Open menu">☰</button>
+          <div class="model-label"><span class="status-dot"></span> Emoney <span class="model-tag">AI</span></div>
+          <button class="icon-button" id="clear-button" type="button" aria-label="Start a new chat" title="New chat">＋</button>
+        </header>
+
+        <section class="chat" id="chat" aria-live="polite">
+          <div class="welcome" id="welcome">
+            <div class="welcome-mark">e</div>
+            <p class="eyebrow">YOUR AI, YOUR WAY</p>
+            <h1>What’s on your mind?</h1>
+            <p class="welcome-subtitle">Ask anything. Explore ideas. Make something great.</p>
+            <div class="suggestions">
+              <button class="suggestion" type="button" data-prompt="Help me come up with a great idea for a side project."><span>✳</span><span><strong>Find inspiration</strong><small>Come up with a fresh idea</small></span><span class="suggestion-arrow">↗</span></button>
+              <button class="suggestion" type="button" data-prompt="Explain a tricky topic in a simple, memorable way."><span>⌘</span><span><strong>Learn something</strong><small>Make a complex topic simple</small></span><span class="suggestion-arrow">↗</span></button>
+              <button class="suggestion" type="button" data-prompt="Help me write a friendly, clear message."><span>✎</span><span><strong>Write it better</strong><small>Get a first draft going</small></span><span class="suggestion-arrow">↗</span></button>
+              <button class="suggestion" type="button" data-prompt="Give me a practical plan for reaching a goal this week."><span>◷</span><span><strong>Make a plan</strong><small>Turn a goal into next steps</small></span><span class="suggestion-arrow">↗</span></button>
+            </div>
+          </div>
+          <div class="messages" id="messages"></div>
+        </section>
+
+        <footer class="composer-area">
+          <form class="composer" id="chat-form">
+            <textarea id="message-input" rows="1" maxlength="8000" aria-label="Message Emoney" placeholder="Message Emoney…"></textarea>
+            <div class="composer-tools">
+              <span class="composer-hint">Emoney can make mistakes. Check important info.</span>
+              <button class="send-button" id="send-button" type="submit" aria-label="Send message" disabled>↑</button>
+            </div>
+          </form>
+        </footer>
+      </main>
+    </div>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="app.js" defer></script>
+  </body>
+</html>
